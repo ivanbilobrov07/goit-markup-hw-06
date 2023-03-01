@@ -601,26 +601,44 @@ body {
 }
 
 .modal-title {
-  margin-bottom: 16px;
+  margin-bottom: 34px;
 
   text-align: center;
   font-weight: 500;
 }
 .modal-form {
 }
-.modal-form-label {
+.modal-form-field {
   position: relative;
+  display: block;
+  margin-bottom: 26px;
 }
 
-.modal-form-label input {
+.modal-form-label {
+  position: absolute;
+  bottom: calc(100% + 4px);
+}
+
+.modal-form-field input {
   display: block;
+  width: 100%;
+  height: 40px;
   margin-bottom: 8px;
+  padding: 11px 0 11px 38px;
 }
 
 .modal-input-icon {
   position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
 }
+
 .privacy {
+}
+
+.modal-form button {
+  display: block;
 }
 
 /* portfolio.html */
