@@ -42,6 +42,10 @@ button {
   cursor: pointer;
 }
 
+b {
+  font-weight: inherit;
+}
+
 /* =============== Common =============== */
 
 body {
@@ -425,7 +429,11 @@ body {
 
 .footer-inner {
   display: flex;
-  gap: 0 120px;
+  align-items: baseline;
+}
+
+.footer-textbox {
+  margin-right: 120px;
 }
 
 .footer .logo {
@@ -443,8 +451,12 @@ body {
   color: var(--white-color);
 }
 
-.footer-socials-text {
-  margin-top: 8px;
+.footer-socials {
+  margin-right: 80px;
+}
+
+.footer-socials-text,
+.subscription-box-text {
   margin-bottom: 16px;
 
   font-weight: 500;
@@ -476,6 +488,51 @@ body {
   display: block;
   width: 24px;
   height: 24px;
+}
+
+.subscription-form {
+  display: flex;
+  gap: 0 24px;
+}
+
+.subscription-form-input {
+  display: block;
+  width: 264px;
+  padding: 8px 0 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  background-color: transparent;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  line-height: 2;
+}
+
+.subscription-form-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 4px;
+
+  background-color: var(--accent-color);
+  font-weight: 500;
+  color: var(--white-color);
+
+  transition: background-color var(--main-trans-dur) var(--main-trans-time-func);
+}
+
+.subscription-form-btn:hover,
+.subscription-form-btn:focus {
+  background-color: var(--main-hover-color);
+}
+
+.subscription-form-icon {
+  width: 24px;
+  height: 20px;
+  margin-left: 16px;
 }
 
 /* =============== Modal window =============== */
@@ -512,6 +569,7 @@ body {
   left: 50%;
   min-width: 408px;
   min-height: 576px;
+  padding: 72px 24px 24px;
 
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
@@ -540,6 +598,29 @@ body {
 .modal-close-icon {
   width: 8px;
   height: 8px;
+}
+
+.modal-title {
+  margin-bottom: 16px;
+
+  text-align: center;
+  font-weight: 500;
+}
+.modal-form {
+}
+.modal-form-label {
+  position: relative;
+}
+
+.modal-form-label input {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.modal-input-icon {
+  position: absolute;
+}
+.privacy {
 }
 
 /* portfolio.html */
