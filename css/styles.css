@@ -505,9 +505,13 @@ body {
 
   background-color: transparent;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.6);
+  color: #ffffff;
   font-size: 12px;
   line-height: 2;
+}
+
+.subscription-form-input:placeholder-shown {
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .subscription-form-btn {
@@ -593,24 +597,41 @@ body {
   align-items: center;
 
   background: #e7e9fc;
+
+  transition: border var(--main-trans-dur) var(--main-trans-time-func),
+    background-color var(--main-trans-dur) var(--main-trans-time-func);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  border: 1px solid var(--main-hover-color);
+  background-color: var(--main-hover-color);
+}
+
+.modal-close:hover .modal-close-icon,
+.modal-close:focus .modal-close-icon {
+  fill: var(--white-color);
 }
 
 .modal-close-icon {
   width: 8px;
   height: 8px;
+
+  transition: fill var(--main-trans-dur) var(--main-trans-time-func);
 }
 
 .modal-title {
-  margin-bottom: 34px;
+  display: block;
+  margin-bottom: 16px;
 
   text-align: center;
   font-weight: 500;
+  color: var(--title-text-color);
 }
 
 .modal-form-field {
-  position: relative;
   display: block;
-  margin-bottom: 26px;
+  margin-bottom: 8px;
 }
 
 .modal-form-field:nth-child(4) {
@@ -618,8 +639,7 @@ body {
 }
 
 .modal-form-label {
-  position: absolute;
-  bottom: calc(100% + 4px);
+  margin-bottom: 4px;
 
   font-size: 12px;
   line-height: 1.16;
@@ -627,21 +647,26 @@ body {
   color: #8e8f99;
 }
 
+.modal-form-wrapper {
+  position: relative;
+  display: block;
+}
+
 .modal-form-input {
   display: block;
   width: 100%;
   height: 40px;
-  margin-bottom: 8px;
-  padding: 11px 0 11px 38px;
+  padding-left: 38px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
 
-  font-size: 12px;
-  line-height: 1.16;
-  letter-spacing: 0.04;
+  font-size: 18px;
+
+  transition: border var(--main-trans-dur) var(--main-trans-time-func);
 }
 
-.modal-form-field:focus-within > .modal-form-input {
+.modal-form-field:focus-within .modal-form-input {
+  outline: none;
   border: 1px solid var(--accent-color);
 }
 
@@ -654,12 +679,18 @@ body {
   top: 50%;
   transform: translateY(-50%);
   left: 16px;
+
+  transition: fill var(--main-trans-dur) var(--main-trans-time-func);
 }
 
 .modal-form-comment {
   resize: none;
   height: 120px;
-  padding: 8px 0 8px 16px;
+  padding: 8px 16px 8px 16px;
+
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.04;
 }
 
 .modal-form-comment::placeholder {
@@ -672,8 +703,9 @@ body {
   align-items: center;
 }
 
-.checkbox-icon {
+.checkbox-wrapper {
   display: inline-block;
+  position: relative;
   margin-right: 8px;
   width: 16px;
   height: 16px;
@@ -681,21 +713,28 @@ body {
 
   border: 1.25px solid var(--title-text-color);
   border-radius: 2px;
+  cursor: pointer;
+  opacity: 1;
+
+  transition: border var(--main-trans-dur) var(--main-trans-time-func);
 }
 
-.modal-form-checkbox {
-  appearance: none;
+.checkbox-icon {
+  opacity: 0;
   position: absolute;
-  top: 0;
-  left: 0;
+  transition: opacity var(--main-trans-dur) var(--main-trans-time-func);
 }
 
-.modal-form-checkbox:checked + .checkbox-icon {
-  background-image: url(../images/checkbox.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+/* .modal-form-checkbox:focus + .checkbox-wrapper {
+  outline: 1px solid var(--accent-color);
+} */
+
+.modal-form-checkbox:checked + .checkbox-wrapper {
   border: none;
+}
+
+.modal-form-checkbox:checked + .checkbox-wrapper .checkbox-icon {
+  opacity: 1;
 }
 
 .privacy-text {
@@ -713,6 +752,24 @@ body {
 
 .modal-form button {
   display: block;
+  min-width: 170px;
+  padding: 16px 32px;
+  border: none;
+  margin: 0 auto;
+
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  background: #4d5ae5;
+  color: var(--white-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+
+  transition: background-color var(--main-trans-dur) var(--main-trans-time-func);
+}
+
+.modal-form button:hover,
+.modal-form button:focus {
+  background-color: var(--main-hover-color);
 }
 
 /* portfolio.html */
