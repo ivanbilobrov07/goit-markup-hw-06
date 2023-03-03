@@ -725,9 +725,13 @@ body {
   transition: opacity var(--main-trans-dur) var(--main-trans-time-func);
 }
 
-/* .modal-form-checkbox:focus + .checkbox-wrapper {
+.modal-form-checkbox:focus + .checkbox-wrapper {
   outline: 1px solid var(--accent-color);
-} */
+}
+
+.modal-form-checkbox:focus + .checkbox-icon {
+  outline: 1px solid var(--accent-color);
+}
 
 .modal-form-checkbox:checked + .checkbox-wrapper {
   border: none;
